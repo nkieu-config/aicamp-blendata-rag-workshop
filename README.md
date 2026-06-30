@@ -5,6 +5,24 @@
 
 ---
 
+## 🏆 Workshop Completion Summary
+
+This repository contains my optimized implementations for the workshop exercises. I have successfully resolved all performance bottlenecks and data pipeline inefficiencies:
+
+1. **Part 1: Churn Prediction Pipeline Optimization**
+   - Refactored Python row-by-row loops (`df.iterrows()`, `.apply(axis=1)`) into vectorized Pandas/NumPy operations.
+   - Performed integer and float downcasting along with immediate deletion of unused string fields, achieving a **90% memory reduction** (from **32.1 MB** to **3.3 MB**).
+   - Speeded up execution time by **16.1x** (reducing total duration from **46.7s** to **2.9s**) with parallelized model training (`n_jobs=-1`).
+   - [Read the detailed Churn Optimization Report](churn/optimization_summary.md)
+
+2. **Part 2: RAG Chatbot Optimization & Scaling**
+   - Configured asynchronous LangGraph execution (`ainvoke`), retrieval boundaries (`RETRIEVAL_K=5`, `SCORE_THRESHOLD=0.35`), response limits, and SSE streaming.
+   - Reduced query latency by **96.5%** (from **12.1s** to **422ms**) and token footprint by **91.4%**.
+   - Scaled the API backend horizontally (3 API instances + Nginx Load Balancer) to ensure stable concurrent connections with **0% error rates** under traffic spikes.
+   - [Read the detailed RAG Optimization & Scaling Report](docs/rag_optimization_summary.md)
+
+---
+
 ## Tech Stack
 
 | Layer | Technology | Details |
