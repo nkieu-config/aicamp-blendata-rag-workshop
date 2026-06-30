@@ -129,7 +129,7 @@ async def exercise_stream(request: Request, body: ChatRequest):
         # ══════════════════════════════════════════════════════════
         async for chunk in llm.astream(messages):
             if chunk.content:
-                pass  # ← Step 2C: แทนที่ pass ด้วย 1 บรรทัด
+                yield f"data: {chunk.content}\n\n"
 
         yield "data: [DONE]\n\n"
 

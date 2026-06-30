@@ -40,16 +40,16 @@ from app.config import settings
 # ══════════════════════════════════════════════════════════════
 
 # Step 1: set to True, then run python scripts/profiler.py to see the bottleneck
-ENABLE_PROFILING = False           # <- Step 1: change to True
+ENABLE_PROFILING = True           # <- Step 1: change to True
 
 # Model (8b-instant works for the whole workshop — 500k tokens/day rate limit)
 MODEL = "llama-3.1-8b-instant"
 
 # Step 2A: RAG Optimization — edit these values, then restart the API
-RETRIEVAL_K = 20        # <- Step 2A: number of chunks to retrieve
-SCORE_THRESHOLD = None  # <- Step 2A: relevance score threshold for filtering
-MAX_TOKENS = None       # <- Step 2A: limit the length of the LLM response
-MAX_HISTORY = 20        # <- Step 2A: limit the number of messages kept in history
+RETRIEVAL_K = 5        # <- Step 2A: number of chunks to retrieve
+SCORE_THRESHOLD = 0.35  # <- Step 2A: relevance score threshold for filtering
+MAX_TOKENS = 512       # <- Step 2A: limit the length of the LLM response
+MAX_HISTORY = 10        # <- Step 2A: limit the number of messages kept in history
 
 # ══════════════════════════════════════════════════════════════
 
@@ -103,7 +103,11 @@ async def exercise_retrieve_node(
     #   2. Filter to score >= SCORE_THRESHOLD (if SCORE_THRESHOLD is not None)
     #   3. Keep only the top 3 docs
     # ══════════════════════════════════════════════════════════
-    top_docs = [(doc, score) for doc, score in docs_with_scores]  # <- edit this line
+    ranked = sorted(docs_with_scores, key=lambda x: x[1], reverse=True)
+    top_docs = [
+        (doc, score) for doc, score in ranked
+        if SCORE_THRESHOLD is None or score >= SCORE_THRESHOLD
+    ][:3]
 
     if not top_docs:
         retrieval_ms = (time.perf_counter() - t0) * 1000 if ENABLE_PROFILING else 0.0
@@ -136,16 +140,11 @@ async def exercise_retrieve_node(
 #
 # Why: synchronous invoke() blocks the event loop, stalling other requests
 # ══════════════════════════════════════════════════════════════
-def exercise_generate_node(state: ExerciseRAGState) -> dict:
+async def exercise_generate_node(state: ExerciseRAGState) -> dict:
     t0 = time.perf_counter() if ENABLE_PROFILING else 0.0
 
     # TODO 2: replace with _get_llm()
-    llm = ChatGroq(
-        model=MODEL,
-        temperature=0.3,
-        max_tokens=MAX_TOKENS,
-        groq_api_key=settings.groq_api_key,
-    )
+    llm = _get_llm()
 
     system_prompt = (
         "You are an AI support assistant for Blendata Enterprise v4.6.0. "
@@ -163,7 +162,7 @@ def exercise_generate_node(state: ExerciseRAGState) -> dict:
     ]
 
     # TODO 3: replace with await llm.ainvoke(messages)
-    response = llm.invoke(messages)
+    response = await llm.ainvoke(messages)
 
     generation_ms = (time.perf_counter() - t0) * 1000 if ENABLE_PROFILING else 0.0
 
