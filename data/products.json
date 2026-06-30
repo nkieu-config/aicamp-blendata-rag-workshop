@@ -1,0 +1,152 @@
+[
+  {
+    "id": "P001",
+    "name": "iPhone 15 Pro Max 256GB",
+    "category": "สมาร์ทโฟน",
+    "price": 49900,
+    "description": "iPhone 15 Pro Max หน้าจอ 6.7 นิ้ว Super Retina XDR ชิป A17 Pro ระบบกล้อง 48MP Triple Camera รองรับ USB-C และ ProRes Video สีให้เลือก 4 สี ได้แก่ Black Titanium, White Titanium, Blue Titanium, Natural Titanium",
+    "stock": 45,
+    "warranty": "1 ปี จาก Apple",
+    "rating": 4.8
+  },
+  {
+    "id": "P002",
+    "name": "MacBook Air M3 13 นิ้ว 8GB/256GB",
+    "category": "คอมพิวเตอร์",
+    "price": 41900,
+    "description": "MacBook Air รุ่นใหม่ ชิป Apple M3 8-core CPU 8-core GPU RAM 8GB SSD 256GB จอ Liquid Retina 13.6 นิ้ว แบตเตอรี่ใช้ได้ 18 ชั่วโมง น้ำหนัก 1.24 กิโลกรัม ไม่มีพัดลม (Fanless)",
+    "stock": 20,
+    "warranty": "1 ปี จาก Apple (ขยายได้ด้วย AppleCare+ 2 ปี)",
+    "rating": 4.9
+  },
+  {
+    "id": "P003",
+    "name": "Samsung Galaxy S24 Ultra 512GB",
+    "category": "สมาร์ทโฟน",
+    "price": 52900,
+    "description": "Galaxy S24 Ultra มาพร้อม S Pen ในตัว หน้าจอ Dynamic AMOLED 2X 6.8 นิ้ว 120Hz ชิป Snapdragon 8 Gen 3 กล้องหลัก 200MP พร้อม Galaxy AI สำหรับ Circle to Search, Live Translate",
+    "stock": 30,
+    "warranty": "1 ปี จาก Samsung",
+    "rating": 4.7
+  },
+  {
+    "id": "P004",
+    "name": "Sony WH-1000XM5 หูฟัง Noise Cancelling",
+    "category": "อุปกรณ์เสียง",
+    "price": 13990,
+    "description": "หูฟัง Over-Ear Wireless Bluetooth 5.2 ระบบตัดเสียงรบกวน Industry-Leading แบตเตอรี่ 30 ชั่วโมง ชาร์จเร็ว 3 นาที ใช้งานได้ 3 ชั่วโมง เชื่อมต่อ 2 อุปกรณ์พร้อมกัน",
+    "stock": 55,
+    "warranty": "1 ปี",
+    "rating": 4.8
+  },
+  {
+    "id": "P005",
+    "name": "iPad Pro M4 11 นิ้ว WiFi 256GB",
+    "category": "แท็บเล็ต",
+    "price": 35900,
+    "description": "iPad Pro รุ่นล่าสุด ชิป M4 จอ Ultra Retina XDR OLED 11 นิ้ว บางที่สุดในประวัติศาสตร์ Apple (5.1mm) รองรับ Apple Pencil Pro และ Magic Keyboard Folio",
+    "stock": 15,
+    "warranty": "1 ปี จาก Apple",
+    "rating": 4.9
+  },
+  {
+    "id": "P006",
+    "name": "ASUS ROG Strix G16 Gaming Laptop",
+    "category": "คอมพิวเตอร์",
+    "price": 59900,
+    "description": "โน้ตบุ๊คเกมมิ่ง Intel Core i9-14900HX GPU NVIDIA RTX 4070 8GB RAM 16GB DDR5 SSD 1TB PCIe 4.0 จอ 16 นิ้ว QHD 240Hz RGB Per-key Keyboard",
+    "stock": 10,
+    "warranty": "2 ปี จาก ASUS",
+    "rating": 4.6
+  },
+  {
+    "id": "P007",
+    "name": "AirPods Pro 2nd Gen USB-C",
+    "category": "อุปกรณ์เสียง",
+    "price": 8490,
+    "description": "AirPods Pro รุ่นที่ 2 ชาร์จ USB-C ระบบ Adaptive Audio ปรับเสียงตามสภาพแวดล้อม Transparency Mode แบตเตอรี่รวม 30 ชั่วโมง (รวม charging case) กันน้ำ IPX4",
+    "stock": 80,
+    "warranty": "1 ปี จาก Apple",
+    "rating": 4.7
+  },
+  {
+    "id": "P008",
+    "name": "LG OLED C4 55 นิ้ว 4K Smart TV",
+    "category": "โทรทัศน์",
+    "price": 54900,
+    "description": "OLED evo TV รุ่น C4 ขนาด 55 นิ้ว ความละเอียด 4K 120Hz Alpha 9 AI Processor Gen7 รองรับ Dolby Vision IQ และ Dolby Atmos HDMI 2.1 x4 webOS 24",
+    "stock": 8,
+    "warranty": "3 ปี (Panel 5 ปี) จาก LG",
+    "rating": 4.8
+  },
+  {
+    "id": "P009",
+    "name": "Logitech MX Master 3S เมาส์ไร้สาย",
+    "category": "อุปกรณ์คอมพิวเตอร์",
+    "price": 3490,
+    "description": "เมาส์ Ergonomic ไร้สาย Bluetooth + USB Receiver ล้อเลื่อน MagSpeed แม่เหล็ก ใช้งาน 70 วัน/ชาร์จ ปรับ DPI 200-8000 เชื่อมต่อ 3 อุปกรณ์พร้อมกัน ใช้ได้ทั้ง Windows และ Mac",
+    "stock": 100,
+    "warranty": "2 ปี จาก Logitech",
+    "rating": 4.8
+  },
+  {
+    "id": "P010",
+    "name": "Samsung 980 Pro SSD 1TB NVMe M.2",
+    "category": "อุปกรณ์จัดเก็บข้อมูล",
+    "price": 2990,
+    "description": "SSD M.2 2280 NVMe PCIe 4.0 ความเร็วอ่านสูงสุด 7,000 MB/s เขียน 5,000 MB/s ความจุ 1TB มี Heat Spreader ในตัว รับประกัน 5 ปี หรือ 600 TBW",
+    "stock": 150,
+    "warranty": "5 ปี",
+    "rating": 4.7
+  },
+  {
+    "id": "P011",
+    "name": "DJI Mini 4 Pro โดรน Standard Combo",
+    "category": "โดรน",
+    "price": 34900,
+    "description": "โดรนน้ำหนักเบา <249g ไม่ต้องจดทะเบียน กล้อง 4K 60fps HDR Vertical Shooting Obstacle Sensing รอบทิศทาง บินได้ 34 นาที สัญญาณ DJI O4 ระยะ 20 กิโลเมตร",
+    "stock": 12,
+    "warranty": "1 ปี จาก DJI",
+    "rating": 4.8
+  },
+  {
+    "id": "P012",
+    "name": "Xbox Series X 1TB Console",
+    "category": "Gaming",
+    "price": 17990,
+    "description": "เครื่องเล่นเกม Xbox Series X ประสิทธิภาพ 12 TFLOPS Custom AMD RDNA 2 CPU AMD Zen 2 8-core SSD NVMe 1TB 4K 120fps Ray Tracing DirectX 12 รองรับ Xbox Game Pass",
+    "stock": 25,
+    "warranty": "1 ปี จาก Microsoft",
+    "rating": 4.6
+  },
+  {
+    "id": "P013",
+    "name": "PlayStation 5 Slim Disc Edition",
+    "category": "Gaming",
+    "price": 17490,
+    "description": "PS5 Slim ขนาดเล็กกว่ารุ่นเดิม 30% อ่านแผ่นได้ CPU AMD Zen 2 8-core GPU 10.28 TFLOPS RDNA 2 SSD Custom 825GB 4K 120fps 3D Audio Tempest Engine",
+    "stock": 20,
+    "warranty": "1 ปี จาก Sony",
+    "rating": 4.7
+  },
+  {
+    "id": "P014",
+    "name": "Nikon Z5 II Mirrorless Camera Body",
+    "category": "กล้องถ่ายรูป",
+    "price": 37900,
+    "description": "กล้อง Full-Frame Mirrorless 24.5MP BSI CMOS Sensor Hybrid AF 273 จุด Phase Detection ถ่ายภาพต่อเนื่อง 14 fps วิดีโอ 4K UHD 30fps แบตเตอรี่ EN-EL15c ถ่ายได้ 470 ช็อต",
+    "stock": 7,
+    "warranty": "1 ปี จาก Nikon",
+    "rating": 4.7
+  },
+  {
+    "id": "P015",
+    "name": "Kindle Paperwhite 16GB (2024)",
+    "category": "E-Reader",
+    "price": 5490,
+    "description": "Kindle Paperwhite รุ่นใหม่ จอ 6.8 นิ้ว 300 ppi ความสว่างปรับได้ กันน้ำ IPX8 แบตเตอรี่ใช้ได้ 12 สัปดาห์ ชาร์จ USB-C เชื่อมต่อ WiFi ความจุ 16GB เก็บหนังสือได้หลายพัน เล่ม",
+    "stock": 60,
+    "warranty": "1 ปี จาก Amazon",
+    "rating": 4.6
+  }
+]

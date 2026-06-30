@@ -1,0 +1,71 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: workshop_qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__LOG_LEVEL: WARN
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/localhost/6333' 2>/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  redis:
+    image: redis/redis-stack-server:latest
+    container_name: workshop_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    environment:
+      REDIS_ARGS: "--appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Scale demo (profile: scale) — รันด้วย:
+  #   docker-compose --profile scale up
+  #   docker-compose --profile scale up --scale api=3   (3 instances)
+  # ──────────────────────────────────────────────────────────────────────
+
+  api:
+    build: .
+    profiles: ["scale"]
+    env_file: .env
+    environment:
+      # Override URLs ให้ชี้ไปยัง service names ใน Docker network
+      QDRANT_URL: http://qdrant:6333
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    # ไม่ expose port ออก host โดยตรง — ผ่าน nginx เท่านั้น
+
+  nginx:
+    image: nginx:alpine
+    profiles: ["scale"]
+    container_name: workshop_nginx
+    ports:
+      - "8080:80"      # เข้าถึงผ่าน http://localhost:8080
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+    restart: on-failure
+
+volumes:
+  qdrant_data:
+    driver: local
+  redis_data:
+    driver: local
